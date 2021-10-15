@@ -24,6 +24,12 @@ void PID_WindupPrevention(PID* pid, bool enabled, float limit)
 	pid->WindupLimit   = limit;
 }
 
+void PID_ClearState(PID* pid)
+{
+	pid->Integral = 0;
+	pid->Error	  = 0;
+}
+
 void PID_Target(PID* pid, float value) { pid->Target = value; }
 
 float PID_Output(PID* pid, float input, float dt)

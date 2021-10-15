@@ -20,6 +20,7 @@ void PID_ChangeP(PID* pid, float p);
 void PID_ChangeI(PID* pid, float i);
 void PID_ChangeD(PID* pid, float d);
 void PID_WindupPrevention(PID* pid, bool enabled, float limit);
+void PID_ClearState(PID* pid);
 
 void  PID_Target(PID* pid, float value);
 float PID_Output(PID* pid, float input, float dt);
