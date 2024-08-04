@@ -12,11 +12,11 @@ void PID_Init(PID* pid, float p, float i, float d)
 	pid->WindupLimit   = 0;
 }
 
-void PID_ChangeP(PID* pid, float p) { pid->P = p; }
+void PID_Proportional(PID* pid, float p) { pid->P = p; }
 
-void PID_ChangeI(PID* pid, float i) { pid->I = i; }
+void PID_Integral(PID* pid, float i) { pid->I = i; }
 
-void PID_ChangeD(PID* pid, float d) { pid->D = d; }
+void PID_Derivative(PID* pid, float d) { pid->D = d; }
 
 void PID_WindupPrevention(PID* pid, bool enabled, float limit)
 {

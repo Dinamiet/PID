@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-typedef struct
+typedef struct _PID_
 {
 	float P;
 	float I;
@@ -11,14 +11,14 @@ typedef struct
 	float Target;
 	float Integral;
 	float Error;
-	bool  PreventWindup;
 	float WindupLimit;
+	bool  PreventWindup;
 } PID;
 
 void PID_Init(PID* pid, float p, float i, float d);
-void PID_ChangeP(PID* pid, float p);
-void PID_ChangeI(PID* pid, float i);
-void PID_ChangeD(PID* pid, float d);
+void PID_Proportional(PID* pid, float p);
+void PID_Integral(PID* pid, float i);
+void PID_Derivative(PID* pid, float d);
 void PID_WindupPrevention(PID* pid, bool enabled, float limit);
 void PID_ClearState(PID* pid);
 
