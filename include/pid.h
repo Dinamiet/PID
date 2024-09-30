@@ -39,21 +39,21 @@ void PID_Init(PID* pid, float p, float i, float d);
  * \param pid PID to update
  * \param p New proportional factor
  */
-void PID_Proportional(PID* pid, float p);
+void PID_SetProportional(PID* pid, float p);
 
 /**
  * Changes or updates the Integral control of PID
  * \param pid PID to update
  * \param p New integral factor
  */
-void PID_Integral(PID* pid, float i);
+void PID_SetIntegral(PID* pid, float i);
 
 /**
  * Changes or updates the Derivative control of PID
  * \param pid PID to update
  * \param p New derivative factor
  */
-void PID_Derivative(PID* pid, float d);
+void PID_SetDerivative(PID* pid, float d);
 
 /**
  * Windup prevention settings for PID

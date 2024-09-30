@@ -2,21 +2,21 @@
 
 void PID_Init(PID* pid, float p, float i, float d)
 {
-	pid->P			   = p;
-	pid->I			   = i;
-	pid->D			   = d;
-	pid->Target		   = 0;
-	pid->Integral	   = 0;
-	pid->Error		   = 0;
+	pid->P             = p;
+	pid->I             = i;
+	pid->D             = d;
+	pid->Target        = 0;
+	pid->Integral      = 0;
+	pid->Error         = 0;
 	pid->PreventWindup = false;
 	pid->WindupLimit   = 0;
 }
 
-void PID_Proportional(PID* pid, float p) { pid->P = p; }
+void PID_SetProportional(PID* pid, float p) { pid->P = p; }
 
-void PID_Integral(PID* pid, float i) { pid->I = i; }
+void PID_SetIntegral(PID* pid, float i) { pid->I = i; }
 
-void PID_Derivative(PID* pid, float d) { pid->D = d; }
+void PID_SetDerivative(PID* pid, float d) { pid->D = d; }
 
 void PID_WindupPrevention(PID* pid, bool enabled, float limit)
 {
@@ -27,7 +27,7 @@ void PID_WindupPrevention(PID* pid, bool enabled, float limit)
 void PID_ClearState(PID* pid)
 {
 	pid->Integral = 0;
-	pid->Error	  = 0;
+	pid->Error    = 0;
 }
 
 void PID_Target(PID* pid, float value) { pid->Target = value; }
